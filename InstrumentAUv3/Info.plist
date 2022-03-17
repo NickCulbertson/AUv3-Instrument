@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionAttributes</key>
+		<dict>
+			<key>AudioComponents</key>
+			<array>
+				<dict>
+					<key>description</key>
+					<string>InstrumentAUv3</string>
+					<key>factoryFunction</key>
+					<string>$(PRODUCT_MODULE_NAME).AudioUnitViewController</string>
+					<key>manufacturer</key>
+					<string>TEST</string>
+					<key>name</key>
+					<string>TEST: InstrumentAUv3</string>
+					<key>sandboxSafe</key>
+					<true/>
+					<key>subtype</key>
+					<string>test</string>
+					<key>tags</key>
+					<array>
+						<string>Synthesizer</string>
+					</array>
+					<key>type</key>
+					<string>aumu</string>
+					<key>version</key>
+					<integer>67072</integer>
+				</dict>
+			</array>
+		</dict>
+		<key>NSExtensionMainStoryboard</key>
+		<string>MainInterface</string>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.AudioUnit-UI</string>
+	</dict>
+</dict>
+</plist>
