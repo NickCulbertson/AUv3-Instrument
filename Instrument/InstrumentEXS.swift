@@ -6,6 +6,7 @@ import SwiftUI
 class InstrumentEXSConductor: ObservableObject, KeyboardDelegate {
 
     @Published var conductor = Conductor()
+    let midi = MIDI()
 
     func noteOn(note: MIDINoteNumber) {
         conductor.instrument.play(noteNumber: note, velocity: 90, channel: 0)
@@ -14,7 +15,11 @@ class InstrumentEXSConductor: ObservableObject, KeyboardDelegate {
     func noteOff(note: MIDINoteNumber) {
         conductor.instrument.stop(noteNumber: note, channel: 0)
     }
-
+    
+    init() {
+        midi.addListener(self)
+    }
+    
     func start() {
         // Load EXS file (you can also load SoundFonts and WAV files too using the AppleSampler Class)
         do {
@@ -31,10 +36,12 @@ class InstrumentEXSConductor: ObservableObject, KeyboardDelegate {
         } catch {
             Log("AudioKit did not start!")
         }
+        midi.openInput()
     }
 
     func stop() {
         conductor.engine.stop()
+        midi.closeAllInputs()
     }
 }
 
