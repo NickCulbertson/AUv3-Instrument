@@ -16,7 +16,6 @@
 		5A1FBF2F27E3651D000AD8AC /* KeyboardControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF2D27E3651C000AD8AC /* KeyboardControl.swift */; };
 		5A1FBF3027E3651D000AD8AC /* ParameterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF2E27E3651C000AD8AC /* ParameterSlider.swift */; };
 		5A1FBF3227E36571000AD8AC /* InstrumentEXS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF3127E36571000AD8AC /* InstrumentEXS.swift */; };
-		5A1FBF3527E365B1000AD8AC /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1FBF3427E365B1000AD8AC /* AudioKit */; };
 		5A1FBF3827E365D0000AD8AC /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1FBF3727E365D0000AD8AC /* AudioKitUI */; };
 		5A1FBF3A27E36690000AD8AC /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBF3927E36690000AD8AC /* Sounds */; };
 		5A1FBF4527E367F2000AD8AC /* InstrumentAUv3AudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF4427E367F2000AD8AC /* InstrumentAUv3AudioUnit.m */; };
@@ -30,10 +29,11 @@
 		5A1FBF5927E367F2000AD8AC /* InstrumentAUv3Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF5827E367F2000AD8AC /* InstrumentAUv3Parameters.swift */; };
 		5A1FBF5D27E367F2000AD8AC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBF5B27E367F2000AD8AC /* MainInterface.storyboard */; };
 		5A1FBF6127E367F2000AD8AC /* InstrumentAUv3.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A1FBF4027E367F2000AD8AC /* InstrumentAUv3.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5A1FBF6827E36819000AD8AC /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1FBF6727E36819000AD8AC /* AudioKit */; };
 		5A1FBF6B27E36836000AD8AC /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBF3927E36690000AD8AC /* Sounds */; };
 		5A1FBF6D27E36869000AD8AC /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF6C27E36869000AD8AC /* Conductor.swift */; };
 		5A1FBF6E27E36869000AD8AC /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF6C27E36869000AD8AC /* Conductor.swift */; };
+		5AE7508A28205DA400AF8E9B /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5AE7508928205DA400AF8E9B /* AudioKit */; };
+		5AE7508C28205DB700AF8E9B /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5AE7508B28205DB700AF8E9B /* AudioKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,8 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE7508A28205DA400AF8E9B /* AudioKit in Frameworks */,
 				5A1FBF3827E365D0000AD8AC /* AudioKitUI in Frameworks */,
-				5A1FBF3527E365B1000AD8AC /* AudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A1FBF6827E36819000AD8AC /* AudioKit in Frameworks */,
+				5AE7508C28205DB700AF8E9B /* AudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,8 +285,8 @@
 			);
 			name = Instrument;
 			packageProductDependencies = (
-				5A1FBF3427E365B1000AD8AC /* AudioKit */,
 				5A1FBF3727E365D0000AD8AC /* AudioKitUI */,
+				5AE7508928205DA400AF8E9B /* AudioKit */,
 			);
 			productName = Instrument;
 			productReference = 5A1FBF0027E364DA000AD8AC /* Instrument.app */;
@@ -342,7 +342,7 @@
 			);
 			name = InstrumentAUv3;
 			packageProductDependencies = (
-				5A1FBF6727E36819000AD8AC /* AudioKit */,
+				5AE7508B28205DB700AF8E9B /* AudioKit */,
 			);
 			productName = InstrumentAUv3;
 			productReference = 5A1FBF4027E367F2000AD8AC /* InstrumentAUv3.appex */;
@@ -384,8 +384,8 @@
 			);
 			mainGroup = 5A1FBEF727E364DA000AD8AC;
 			packageReferences = (
-				5A1FBF3327E365B1000AD8AC /* XCRemoteSwiftPackageReference "AudioKit" */,
 				5A1FBF3627E365CF000AD8AC /* XCRemoteSwiftPackageReference "AudioKitUI" */,
+				5AE7508828205DA400AF8E9B /* XCRemoteSwiftPackageReference "AudioKit" */,
 			);
 			productRefGroup = 5A1FBF0127E364DA000AD8AC /* Products */;
 			projectDirPath = "";
@@ -639,7 +639,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Instrument/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = HH48VMRLAB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Instrument/Info.plist;
@@ -670,7 +670,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Instrument/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = HH48VMRLAB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Instrument/Info.plist;
@@ -769,7 +769,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = HH48VMRLAB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InstrumentAUv3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = InstrumentAUv3;
@@ -795,7 +795,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = HH48VMRLAB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InstrumentAUv3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = InstrumentAUv3;
@@ -867,14 +867,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5A1FBF3327E365B1000AD8AC /* XCRemoteSwiftPackageReference "AudioKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AudioKit/AudioKit";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
 		5A1FBF3627E365CF000AD8AC /* XCRemoteSwiftPackageReference "AudioKitUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKitUI";
@@ -883,22 +875,30 @@
 				kind = branch;
 			};
 		};
+		5AE7508828205DA400AF8E9B /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5A1FBF3427E365B1000AD8AC /* AudioKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5A1FBF3327E365B1000AD8AC /* XCRemoteSwiftPackageReference "AudioKit" */;
-			productName = AudioKit;
-		};
 		5A1FBF3727E365D0000AD8AC /* AudioKitUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A1FBF3627E365CF000AD8AC /* XCRemoteSwiftPackageReference "AudioKitUI" */;
 			productName = AudioKitUI;
 		};
-		5A1FBF6727E36819000AD8AC /* AudioKit */ = {
+		5AE7508928205DA400AF8E9B /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5A1FBF3327E365B1000AD8AC /* XCRemoteSwiftPackageReference "AudioKit" */;
+			package = 5AE7508828205DA400AF8E9B /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		5AE7508B28205DB700AF8E9B /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AE7508828205DA400AF8E9B /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
 		};
 /* End XCSwiftPackageProductDependency section */
