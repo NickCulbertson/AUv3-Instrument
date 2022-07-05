@@ -15,11 +15,11 @@ class InstrumentEXSConductor: ObservableObject, KeyboardDelegate {
     func noteOff(note: MIDINoteNumber) {
         conductor.instrument.stop(noteNumber: note, channel: 0)
     }
-    
+
     init() {
         midi.addListener(self)
     }
-    
+
     func start() {
         // Load EXS file (you can also load SoundFonts and WAV files too using the AppleSampler Class)
         do {
@@ -47,6 +47,8 @@ class InstrumentEXSConductor: ObservableObject, KeyboardDelegate {
 
 struct InstrumentEXSView: View {
     @StateObject var instrumentEXSConductor = InstrumentEXSConductor()
+    @Environment(\.scenePhase) var scenePhase
+    var backgroundMode = true // This variable controls the background audio state. Your users might want to disable it to save on battery usage.
 
     var body: some View {
         ParameterSlider(text: "Reverb",
@@ -57,12 +59,26 @@ struct InstrumentEXSView: View {
                         octaveCount: 2,
                         polyphonicMode: true,
                         delegate: instrumentEXSConductor)
-        .onAppear {
-            self.instrumentEXSConductor.start()
-        }
-        .onDisappear {
-            self.instrumentEXSConductor.stop()
-        }
+            .onAppear {
+                if(!self.instrumentEXSConductor.conductor.engine.avEngine.isRunning) {
+                self.instrumentEXSConductor.start()
+                }
+            }
+            .onChange(of: scenePhase) { newPhase in
+                if newPhase == .active {
+                    Log("Active")
+                    if(!self.instrumentEXSConductor.conductor.engine.avEngine.isRunning) {
+                        Log("Engine Running")
+                        self.instrumentEXSConductor.start()
+                    }
+                } else if newPhase == .background {
+                    Log("Background")
+                    if(!backgroundMode){
+                        Log("Engine Stopped")
+                        self.instrumentEXSConductor.stop()
+                    }
+                }
+            }
     }
 }
 
@@ -76,43 +92,43 @@ extension InstrumentEXSConductor: MIDIListener {
     func receivedMIDINoteOn(noteNumber: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel, portID: MIDIUniqueID?, timeStamp: MIDITimeStamp?) {
         conductor.instrument.play(noteNumber: noteNumber, velocity: velocity, channel: channel)
     }
-    
+
     func receivedMIDINoteOff(noteNumber: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel, portID: MIDIUniqueID?, timeStamp: MIDITimeStamp?) {
         conductor.instrument.stop(noteNumber: noteNumber, channel: channel)
     }
-    
+
     func receivedMIDIController(_ controller: MIDIByte, value: MIDIByte, channel: MIDIChannel, portID: MIDIUniqueID?, timeStamp: MIDITimeStamp?) {
         conductor.instrument.midiCC(1, value: value, channel: channel)
     }
-    
+
     func receivedMIDIPitchWheel(_ pitchWheelValue: MIDIWord, channel: MIDIChannel, portID: MIDIUniqueID?, timeStamp: MIDITimeStamp?) {
         conductor.instrument.setPitchbend(amount: pitchWheelValue, channel: channel)
     }
-    
+
     func receivedMIDIAftertouch(noteNumber: MIDINoteNumber, pressure: MIDIByte, channel: MIDIChannel, portID: MIDIUniqueID?, timeStamp: MIDITimeStamp?) {
         
     }
-    
+
     func receivedMIDIAftertouch(_ pressure: MIDIByte, channel: MIDIChannel, portID: MIDIUniqueID?, timeStamp: MIDITimeStamp?) {
     
     }
-    
+
     func receivedMIDIProgramChange(_ program: MIDIByte, channel: MIDIChannel, portID: MIDIUniqueID?, timeStamp: MIDITimeStamp?) {
         
     }
-    
+
     func receivedMIDISystemCommand(_ data: [MIDIByte], portID: MIDIUniqueID?, timeStamp: MIDITimeStamp?) {
         
     }
-    
+
     func receivedMIDISetupChange() {
         
     }
-    
+
     func receivedMIDIPropertyChange(propertyChangeInfo: MIDIObjectPropertyChangeNotification) {
         
     }
-    
+
     func receivedMIDINotification(notification: MIDINotification) {
         
     }
