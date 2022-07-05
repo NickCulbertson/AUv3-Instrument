@@ -59,26 +59,26 @@ struct InstrumentEXSView: View {
                         octaveCount: 2,
                         polyphonicMode: true,
                         delegate: instrumentEXSConductor)
-            .onAppear {
+        .onAppear {
+            if(!self.instrumentEXSConductor.conductor.engine.avEngine.isRunning) {
+            self.instrumentEXSConductor.start()
+            }
+        }
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase == .active {
+                Log("Active")
                 if(!self.instrumentEXSConductor.conductor.engine.avEngine.isRunning) {
-                self.instrumentEXSConductor.start()
+                    Log("Engine Running")
+                    self.instrumentEXSConductor.start()
+                }
+            } else if newPhase == .background {
+                Log("Background")
+                if(!backgroundMode){
+                    Log("Engine Stopped")
+                    self.instrumentEXSConductor.stop()
                 }
             }
-            .onChange(of: scenePhase) { newPhase in
-                if newPhase == .active {
-                    Log("Active")
-                    if(!self.instrumentEXSConductor.conductor.engine.avEngine.isRunning) {
-                        Log("Engine Running")
-                        self.instrumentEXSConductor.start()
-                    }
-                } else if newPhase == .background {
-                    Log("Background")
-                    if(!backgroundMode){
-                        Log("Engine Stopped")
-                        self.instrumentEXSConductor.stop()
-                    }
-                }
-            }
+        }
     }
 }
 
