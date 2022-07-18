@@ -61,14 +61,16 @@ struct InstrumentEXSView: View {
                         delegate: instrumentEXSConductor)
         .onAppear {
             if(!self.instrumentEXSConductor.conductor.engine.avEngine.isRunning) {
-            self.instrumentEXSConductor.start()
+                Log("Engine Starting")
+                self.instrumentEXSConductor.start()
             }
         }
+        // Background Engine Start & Stop
         .onChange(of: scenePhase) { newPhase in
             if newPhase == .active {
                 Log("Active")
                 if(!self.instrumentEXSConductor.conductor.engine.avEngine.isRunning) {
-                    Log("Engine Running")
+                    Log("Engine Starting")
                     self.instrumentEXSConductor.start()
                 }
             } else if newPhase == .background {
@@ -76,6 +78,36 @@ struct InstrumentEXSView: View {
                 if(!backgroundMode){
                     Log("Engine Stopped")
                     self.instrumentEXSConductor.stop()
+                }
+            }
+        }
+        // Phone Call Start & Stop
+        .onReceive(NotificationCenter.default.publisher(for: AVAudioSession.interruptionNotification)) { event in
+            guard let info = event.userInfo,
+                  let typeValue = info[AVAudioSessionInterruptionTypeKey] as? UInt,
+                  let type = AVAudioSession.InterruptionType(rawValue: typeValue) else {
+                      return
+                  }
+            if type == .began {
+                // Interruption began, take appropriate actions (save state, update user interface)
+                self.instrumentEXSConductor.stop()
+            }
+            else if type == .ended {
+                guard let optionsValue =
+                        info[AVAudioSessionInterruptionOptionKey] as? UInt else {
+                            return
+                        }
+                let options = AVAudioSession.InterruptionOptions(rawValue: optionsValue)
+                if options.contains(.shouldResume) {
+                    // Interruption Ended - playback should resume
+                    if(self.instrumentEXSConductor.conductor.engine.avEngine.isRunning) {
+                        print("Engine Already Running")
+                    } else {
+                        let deadlineTime = DispatchTime.now() + .milliseconds(100)
+                        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+                            self.instrumentEXSConductor.start()
+                        }
+                    }
                 }
             }
         }
