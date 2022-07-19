@@ -103,7 +103,7 @@ struct InstrumentEXSView: View {
                     if(self.instrumentEXSConductor.conductor.engine.avEngine.isRunning) {
                         print("Engine Already Running")
                     } else {
-                        let deadlineTime = DispatchTime.now() + .milliseconds(200)
+                        let deadlineTime = DispatchTime.now() + .milliseconds(1000)
                         DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
                             self.instrumentEXSConductor.start()
                         }
