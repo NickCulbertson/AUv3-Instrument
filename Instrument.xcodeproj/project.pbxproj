@@ -34,6 +34,8 @@
 		5A1FBF6E27E36869000AD8AC /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF6C27E36869000AD8AC /* Conductor.swift */; };
 		5AE7508A28205DA400AF8E9B /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5AE7508928205DA400AF8E9B /* AudioKit */; };
 		5AE7508C28205DB700AF8E9B /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5AE7508B28205DB700AF8E9B /* AudioKit */; };
+		5AFC70562899809A00F07E00 /* KeyboardWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC70542899809A00F07E00 /* KeyboardWidget.swift */; };
+		5AFC70572899809A00F07E00 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC70552899809A00F07E00 /* KeyboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		5A1FBF5C27E367F2000AD8AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		5A1FBF5E27E367F2000AD8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A1FBF6C27E36869000AD8AC /* Conductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conductor.swift; sourceTree = "<group>"; };
+		5AFC70542899809A00F07E00 /* KeyboardWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardWidget.swift; sourceTree = "<group>"; };
+		5AFC70552899809A00F07E00 /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,8 @@
 				5A1FBF6C27E36869000AD8AC /* Conductor.swift */,
 				5A1FBF2D27E3651C000AD8AC /* KeyboardControl.swift */,
 				5A1FBF2E27E3651C000AD8AC /* ParameterSlider.swift */,
+				5AFC70552899809A00F07E00 /* KeyboardView.swift */,
+				5AFC70542899809A00F07E00 /* KeyboardWidget.swift */,
 				5A1FBF0727E364DB000AD8AC /* Assets.xcassets */,
 				5A1FBF0927E364DB000AD8AC /* Preview Content */,
 			);
@@ -445,6 +451,8 @@
 			files = (
 				5A1FBF3027E3651D000AD8AC /* ParameterSlider.swift in Sources */,
 				5A1FBF2F27E3651D000AD8AC /* KeyboardControl.swift in Sources */,
+				5AFC70572899809A00F07E00 /* KeyboardView.swift in Sources */,
+				5AFC70562899809A00F07E00 /* KeyboardWidget.swift in Sources */,
 				5A1FBF6D27E36869000AD8AC /* Conductor.swift in Sources */,
 				5A1FBF0427E364DA000AD8AC /* InstrumentApp.swift in Sources */,
 				5A1FBF3227E36571000AD8AC /* InstrumentEXS.swift in Sources */,

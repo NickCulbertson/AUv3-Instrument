@@ -40,7 +40,7 @@ struct KeyboardControl: View {
                 }
             }
         }
-        KeyboardWidget(delegate: delegate,
+        KeyboardWidgetClass(delegate: delegate,
                        firstOctave: firstOctave,
                        octaveCount: octaveCount,
                        polyphonicMode: polyphonicMode)
