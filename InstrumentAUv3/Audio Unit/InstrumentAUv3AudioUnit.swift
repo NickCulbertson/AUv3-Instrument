@@ -33,7 +33,6 @@ public class InstrumentAUv3AudioUnit: AUAudioUnit {
         Settings.sampleRate = AVAudioSession.sharedInstance().sampleRate
         Settings.disableAVAudioSessionCategoryManagement = true
         conductor = Conductor()
-        conductor.start()
         engine = conductor.engine.avEngine
         
         do {
