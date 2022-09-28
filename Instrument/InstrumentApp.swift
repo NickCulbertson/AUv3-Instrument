@@ -9,7 +9,7 @@ struct InstrumentApp: App {
     init() {
 #if os(iOS)
         do {
-            Settings.bufferLength = .long
+            Settings.bufferLength = .medium
             try AVAudioSession.sharedInstance().setPreferredIOBufferDuration(Settings.bufferLength.duration)
             try AVAudioSession.sharedInstance().setCategory(.playAndRecord,
                                                             options: [.defaultToSpeaker, .mixWithOthers, .allowBluetoothA2DP])
