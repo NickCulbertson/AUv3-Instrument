@@ -13,10 +13,8 @@
 		5A1FBF1527E364DB000AD8AC /* InstrumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF1427E364DB000AD8AC /* InstrumentTests.swift */; };
 		5A1FBF1F27E364DB000AD8AC /* InstrumentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF1E27E364DB000AD8AC /* InstrumentUITests.swift */; };
 		5A1FBF2127E364DB000AD8AC /* InstrumentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF2027E364DB000AD8AC /* InstrumentUITestsLaunchTests.swift */; };
-		5A1FBF2F27E3651D000AD8AC /* KeyboardControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF2D27E3651C000AD8AC /* KeyboardControl.swift */; };
 		5A1FBF3027E3651D000AD8AC /* ParameterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF2E27E3651C000AD8AC /* ParameterSlider.swift */; };
 		5A1FBF3227E36571000AD8AC /* InstrumentEXS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF3127E36571000AD8AC /* InstrumentEXS.swift */; };
-		5A1FBF3827E365D0000AD8AC /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5A1FBF3727E365D0000AD8AC /* AudioKitUI */; };
 		5A1FBF3A27E36690000AD8AC /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBF3927E36690000AD8AC /* Sounds */; };
 		5A1FBF4527E367F2000AD8AC /* InstrumentAUv3AudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF4427E367F2000AD8AC /* InstrumentAUv3AudioUnit.m */; };
 		5A1FBF4927E367F2000AD8AC /* DSPKernel.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBF4827E367F2000AD8AC /* DSPKernel.hpp */; };
@@ -32,10 +30,10 @@
 		5A1FBF6B27E36836000AD8AC /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBF3927E36690000AD8AC /* Sounds */; };
 		5A1FBF6D27E36869000AD8AC /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF6C27E36869000AD8AC /* Conductor.swift */; };
 		5A1FBF6E27E36869000AD8AC /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF6C27E36869000AD8AC /* Conductor.swift */; };
+		5AE71F4D28EDB13F00AC572B /* SwiftUIKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE71F4C28EDB13F00AC572B /* SwiftUIKeyboard.swift */; };
+		5AE71F5028EDB15400AC572B /* Keyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 5AE71F4F28EDB15400AC572B /* Keyboard */; };
 		5AE7508A28205DA400AF8E9B /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5AE7508928205DA400AF8E9B /* AudioKit */; };
 		5AE7508C28205DB700AF8E9B /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5AE7508B28205DB700AF8E9B /* AudioKit */; };
-		5AFC70562899809A00F07E00 /* KeyboardWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC70542899809A00F07E00 /* KeyboardWidget.swift */; };
-		5AFC70572899809A00F07E00 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC70552899809A00F07E00 /* KeyboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +84,6 @@
 		5A1FBF1A27E364DB000AD8AC /* InstrumentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstrumentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A1FBF1E27E364DB000AD8AC /* InstrumentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentUITests.swift; sourceTree = "<group>"; };
 		5A1FBF2027E364DB000AD8AC /* InstrumentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		5A1FBF2D27E3651C000AD8AC /* KeyboardControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardControl.swift; sourceTree = "<group>"; };
 		5A1FBF2E27E3651C000AD8AC /* ParameterSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterSlider.swift; sourceTree = "<group>"; };
 		5A1FBF3127E36571000AD8AC /* InstrumentEXS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrumentEXS.swift; sourceTree = "<group>"; };
 		5A1FBF3927E36690000AD8AC /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
@@ -107,8 +104,7 @@
 		5A1FBF5C27E367F2000AD8AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		5A1FBF5E27E367F2000AD8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A1FBF6C27E36869000AD8AC /* Conductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conductor.swift; sourceTree = "<group>"; };
-		5AFC70542899809A00F07E00 /* KeyboardWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardWidget.swift; sourceTree = "<group>"; };
-		5AFC70552899809A00F07E00 /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		5AE71F4C28EDB13F00AC572B /* SwiftUIKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE71F5028EDB15400AC572B /* Keyboard in Frameworks */,
 				5AE7508A28205DA400AF8E9B /* AudioKit in Frameworks */,
-				5A1FBF3827E365D0000AD8AC /* AudioKitUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,11 +172,9 @@
 				5A1FBF3B27E3675C000AD8AC /* Info.plist */,
 				5A1FBF0327E364DA000AD8AC /* InstrumentApp.swift */,
 				5A1FBF3127E36571000AD8AC /* InstrumentEXS.swift */,
+				5AE71F4C28EDB13F00AC572B /* SwiftUIKeyboard.swift */,
 				5A1FBF6C27E36869000AD8AC /* Conductor.swift */,
-				5A1FBF2D27E3651C000AD8AC /* KeyboardControl.swift */,
 				5A1FBF2E27E3651C000AD8AC /* ParameterSlider.swift */,
-				5AFC70552899809A00F07E00 /* KeyboardView.swift */,
-				5AFC70542899809A00F07E00 /* KeyboardWidget.swift */,
 				5A1FBF0727E364DB000AD8AC /* Assets.xcassets */,
 				5A1FBF0927E364DB000AD8AC /* Preview Content */,
 			);
@@ -291,8 +285,8 @@
 			);
 			name = Instrument;
 			packageProductDependencies = (
-				5A1FBF3727E365D0000AD8AC /* AudioKitUI */,
 				5AE7508928205DA400AF8E9B /* AudioKit */,
+				5AE71F4F28EDB15400AC572B /* Keyboard */,
 			);
 			productName = Instrument;
 			productReference = 5A1FBF0027E364DA000AD8AC /* Instrument.app */;
@@ -390,8 +384,8 @@
 			);
 			mainGroup = 5A1FBEF727E364DA000AD8AC;
 			packageReferences = (
-				5A1FBF3627E365CF000AD8AC /* XCRemoteSwiftPackageReference "AudioKitUI" */,
 				5AE7508828205DA400AF8E9B /* XCRemoteSwiftPackageReference "AudioKit" */,
+				5AE71F4E28EDB15400AC572B /* XCRemoteSwiftPackageReference "Keyboard" */,
 			);
 			productRefGroup = 5A1FBF0127E364DA000AD8AC /* Products */;
 			projectDirPath = "";
@@ -450,9 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1FBF3027E3651D000AD8AC /* ParameterSlider.swift in Sources */,
-				5A1FBF2F27E3651D000AD8AC /* KeyboardControl.swift in Sources */,
-				5AFC70572899809A00F07E00 /* KeyboardView.swift in Sources */,
-				5AFC70562899809A00F07E00 /* KeyboardWidget.swift in Sources */,
+				5AE71F4D28EDB13F00AC572B /* SwiftUIKeyboard.swift in Sources */,
 				5A1FBF6D27E36869000AD8AC /* Conductor.swift in Sources */,
 				5A1FBF0427E364DA000AD8AC /* InstrumentApp.swift in Sources */,
 				5A1FBF3227E36571000AD8AC /* InstrumentEXS.swift in Sources */,
@@ -875,9 +867,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5A1FBF3627E365CF000AD8AC /* XCRemoteSwiftPackageReference "AudioKitUI" */ = {
+		5AE71F4E28EDB15400AC572B /* XCRemoteSwiftPackageReference "Keyboard" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AudioKit/AudioKitUI";
+			repositoryURL = "https://github.com/AudioKit/Keyboard";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -894,10 +886,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5A1FBF3727E365D0000AD8AC /* AudioKitUI */ = {
+		5AE71F4F28EDB15400AC572B /* Keyboard */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5A1FBF3627E365CF000AD8AC /* XCRemoteSwiftPackageReference "AudioKitUI" */;
-			productName = AudioKitUI;
+			package = 5AE71F4E28EDB15400AC572B /* XCRemoteSwiftPackageReference "Keyboard" */;
+			productName = Keyboard;
 		};
 		5AE7508928205DA400AF8E9B /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;

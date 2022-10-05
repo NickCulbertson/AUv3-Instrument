@@ -1,25 +1,32 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "AudioKit",
-        "repositoryURL": "https://github.com/AudioKit/AudioKit",
-        "state": {
-          "branch": "main",
-          "revision": "e7f37266dc9200f04a2646b108acae98c87f8e46",
-          "version": null
-        }
-      },
-      {
-        "package": "AudioKitUI",
-        "repositoryURL": "https://github.com/AudioKit/AudioKitUI",
-        "state": {
-          "branch": "main",
-          "revision": "2586868950f1be180c0f6d0bb103d61bbfa18730",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "audiokit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AudioKit/AudioKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e66018e86048bc543bb214f3d63ce1308a504145"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "keyboard",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AudioKit/Keyboard",
+      "state" : {
+        "branch" : "main",
+        "revision" : "3c3dd7bd0dd24af6a3d91dc49fa7f3375084d6a6"
+      }
+    },
+    {
+      "identity" : "tonic",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AudioKit/Tonic.git",
+      "state" : {
+        "revision" : "d9280b44489bb753c4a2ac7206142547f2a986cc",
+        "version" : "1.0.7"
+      }
+    }
+  ],
+  "version" : 2
 }
