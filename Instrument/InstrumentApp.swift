@@ -1,7 +1,6 @@
 import SwiftUI
 import AVFoundation
 import AudioKit
-import AudioKitUI
 
 @main
 struct InstrumentApp: App {
