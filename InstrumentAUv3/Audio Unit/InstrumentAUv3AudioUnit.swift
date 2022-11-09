@@ -13,6 +13,8 @@ public class InstrumentAUv3AudioUnit: AUAudioUnit {
     private var _currentPreset: AUAudioUnitPreset?
     private let appStateKey = "appStatePreset"
     private let lastLoadedPresetKey = "lastLoadedPreset"
+    private var confirmEngineStarted = false
+    private var doneLoading = false
 
     var AUParam1 = AUParameterTree.createParameter(withIdentifier: "AUParam1",
                                                           name: "Reverb",
@@ -30,14 +32,11 @@ public class InstrumentAUv3AudioUnit: AUAudioUnit {
     public override init(componentDescription: AudioComponentDescription,
                          options: AudioComponentInstantiationOptions = []) throws {
 
-        Settings.sampleRate = AVAudioSession.sharedInstance().sampleRate
-        Settings.disableAVAudioSessionCategoryManagement = true
         conductor = Conductor()
         engine = conductor.engine.avEngine
         
         do {
             //this is where the audio unit really starts firing up with the data it needs
-            try engine.enableManualRenderingMode(.offline, format: Settings.audioFormat, maximumFrameCount: 4096)
             try super.init(componentDescription: componentDescription, options: options)
             try setOutputBusArrays()
         } catch {
@@ -113,7 +112,6 @@ public class InstrumentAUv3AudioUnit: AUAudioUnit {
             }
         }
     }
-    
 
     private func handleEvents(eventsList: AURenderEvent?, timestamp: UnsafePointer<AudioTimeStamp>) {
         var nextEvent = eventsList
@@ -161,26 +159,42 @@ public class InstrumentAUv3AudioUnit: AUAudioUnit {
     override public func allocateRenderResources() throws {
         do {
             try engine.enableManualRenderingMode(.offline, format: outputBus.format, maximumFrameCount: 4096)
-            Settings.disableAVAudioSessionCategoryManagement = true
-            let sessionSize = Settings.session.sampleRate * Settings.session.ioBufferDuration
-            if let length = Settings.BufferLength.init(rawValue: Int(sessionSize.rounded())) {
-                Settings.bufferLength = length
+            //start engine on the main thread
+            performOnMain {
+                self.engineStart()
             }
-            Settings.sampleRate = outputBus.format.sampleRate
-            conductor.start()
             try super.allocateRenderResources()
+            confirmEngineStarted = false
+            doneLoading = true
         } catch {
             return
         }
         self.mcb = self.musicalContextBlock
         self.tsb = self.transportStateBlock
         self.moeb = self.midiOutputEventBlock
-
     }
+    
+    func engineStart() {
+        //This is where to start the engine and reset the sampler sounds if needed
+        //start engine on the main thread
+        performOnMain {
+            self.conductor.start()
+        }
+    }
+    
+    func performOnMain(_ operation: @escaping () -> Void) {
+            if Thread.isMainThread {
+                operation()
+            } else {
+                DispatchQueue.main.async {
+                    operation()
+                }
+            }
+        }
 
     override public func deallocateRenderResources() {
-        conductor.stop()
         engine.stop()
+        confirmEngineStarted = false
         super.deallocateRenderResources()
         self.mcb = nil
         self.tsb = nil
@@ -218,8 +232,24 @@ public class InstrumentAUv3AudioUnit: AUAudioUnit {
 
     func receivedMIDINoteOn(noteNumber: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel,
                             offset: MIDITimeStamp) {
-        conductor.instrument.play(noteNumber: noteNumber, velocity: velocity, channel: channel)
+        //Don't play MIDI until the engine is loaded
+        if !doneLoading { return }
 
+        if !confirmEngineStarted && !engine.isRunning {
+            //This will only be called if the engine fails to start in allocateRenderResources
+            engineStart()
+        } else {
+            confirmEngineStarted = true
+        }
+        
+        if confirmEngineStarted {
+            conductor.instrument.play(noteNumber: noteNumber, velocity: velocity, channel: channel)
+        }else{
+            //if engine is just starting delay the first note playing
+            DispatchQueue.main.async {
+                self.conductor.instrument.play(noteNumber: noteNumber, velocity: velocity, channel: channel)
+            }
+        }
     }
 
     func receivedMIDINoteOff(noteNumber: MIDINoteNumber, channel: MIDIChannel, offset: MIDITimeStamp) {
@@ -257,7 +287,8 @@ public class InstrumentAUv3AudioUnit: AUAudioUnit {
     }
     
     open func setOutputBusArrays() throws {
-        outputBus = try AUAudioUnitBus(format: Settings.audioFormat)
+        let defaultAudioFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 2)
+        outputBus = try AUAudioUnitBus(format: defaultAudioFormat!)
         self._outputBusArray = AUAudioUnitBusArray(audioUnit: self, busType: AUAudioUnitBusType.output, busses: [outputBus])
     }
 
