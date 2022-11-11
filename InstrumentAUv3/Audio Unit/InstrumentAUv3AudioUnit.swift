@@ -34,7 +34,6 @@ public class InstrumentAUv3AudioUnit: AUAudioUnit {
 
         conductor = Conductor()
         engine = conductor.engine.avEngine
-        
         do {
             //this is where the audio unit really starts firing up with the data it needs
             try super.init(componentDescription: componentDescription, options: options)
@@ -159,10 +158,8 @@ public class InstrumentAUv3AudioUnit: AUAudioUnit {
     override public func allocateRenderResources() throws {
         do {
             try engine.enableManualRenderingMode(.offline, format: outputBus.format, maximumFrameCount: 4096)
-            //start engine on the main thread
-            performOnMain {
-                self.engineStart()
-            }
+            engineStart()
+            
             try super.allocateRenderResources()
             confirmEngineStarted = false
             doneLoading = true
@@ -176,21 +173,8 @@ public class InstrumentAUv3AudioUnit: AUAudioUnit {
     
     func engineStart() {
         //This is where to start the engine and reset the sampler sounds if needed
-        //start engine on the main thread
-        performOnMain {
-            self.conductor.start()
-        }
+        self.conductor.start()
     }
-    
-    func performOnMain(_ operation: @escaping () -> Void) {
-            if Thread.isMainThread {
-                operation()
-            } else {
-                DispatchQueue.main.async {
-                    operation()
-                }
-            }
-        }
 
     override public func deallocateRenderResources() {
         engine.stop()
