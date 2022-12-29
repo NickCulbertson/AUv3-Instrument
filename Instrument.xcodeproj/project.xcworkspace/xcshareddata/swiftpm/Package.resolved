@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/AudioKit/AudioKit",
       "state" : {
-        "branch" : "main",
-        "revision" : "e66018e86048bc543bb214f3d63ce1308a504145"
+        "branch" : "v6",
+        "revision" : "52bb718be455ffcb5d970fb54c8f0126c3e98452"
       }
     },
     {

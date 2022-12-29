@@ -3,7 +3,8 @@ import AVFoundation
 
 class Conductor: ObservableObject {
 
-    let engine = AudioEngine()
+    //The AudioKit engine is AudioEngine() in v5 and Engine() in v6
+    let engine = Engine()
     var instrument = MIDISampler(name: "Instrument 1")
     @Published var verb: Reverb
 
