@@ -16,15 +16,8 @@
 		5A1FBF3027E3651D000AD8AC /* ParameterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF2E27E3651C000AD8AC /* ParameterSlider.swift */; };
 		5A1FBF3227E36571000AD8AC /* InstrumentEXS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF3127E36571000AD8AC /* InstrumentEXS.swift */; };
 		5A1FBF3A27E36690000AD8AC /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBF3927E36690000AD8AC /* Sounds */; };
-		5A1FBF4527E367F2000AD8AC /* InstrumentAUv3AudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF4427E367F2000AD8AC /* InstrumentAUv3AudioUnit.m */; };
-		5A1FBF4927E367F2000AD8AC /* DSPKernel.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBF4827E367F2000AD8AC /* DSPKernel.hpp */; };
-		5A1FBF4B27E367F2000AD8AC /* DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF4A27E367F2000AD8AC /* DSPKernel.mm */; };
-		5A1FBF4D27E367F2000AD8AC /* BufferedAudioBus.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBF4C27E367F2000AD8AC /* BufferedAudioBus.hpp */; };
-		5A1FBF5027E367F2000AD8AC /* InstrumentAUv3DSPKernel.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBF4F27E367F2000AD8AC /* InstrumentAUv3DSPKernel.hpp */; };
-		5A1FBF5227E367F2000AD8AC /* InstrumentAUv3DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF5127E367F2000AD8AC /* InstrumentAUv3DSPKernel.mm */; };
 		5A1FBF5527E367F2000AD8AC /* AudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF5427E367F2000AD8AC /* AudioUnitViewController.swift */; };
 		5A1FBF5727E367F2000AD8AC /* InstrumentAUv3AudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF5627E367F2000AD8AC /* InstrumentAUv3AudioUnit.swift */; };
-		5A1FBF5927E367F2000AD8AC /* InstrumentAUv3Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF5827E367F2000AD8AC /* InstrumentAUv3Parameters.swift */; };
 		5A1FBF5D27E367F2000AD8AC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBF5B27E367F2000AD8AC /* MainInterface.storyboard */; };
 		5A1FBF6127E367F2000AD8AC /* InstrumentAUv3.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A1FBF4027E367F2000AD8AC /* InstrumentAUv3.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5A1FBF6B27E36836000AD8AC /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBF3927E36690000AD8AC /* Sounds */; };
@@ -89,18 +82,8 @@
 		5A1FBF3927E36690000AD8AC /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 		5A1FBF3B27E3675C000AD8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5A1FBF4027E367F2000AD8AC /* InstrumentAUv3.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InstrumentAUv3.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A1FBF4327E367F2000AD8AC /* InstrumentAUv3AudioUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstrumentAUv3AudioUnit.h; sourceTree = "<group>"; };
-		5A1FBF4427E367F2000AD8AC /* InstrumentAUv3AudioUnit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstrumentAUv3AudioUnit.m; sourceTree = "<group>"; };
-		5A1FBF4827E367F2000AD8AC /* DSPKernel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DSPKernel.hpp; sourceTree = "<group>"; };
-		5A1FBF4A27E367F2000AD8AC /* DSPKernel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DSPKernel.mm; sourceTree = "<group>"; };
-		5A1FBF4C27E367F2000AD8AC /* BufferedAudioBus.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BufferedAudioBus.hpp; sourceTree = "<group>"; };
-		5A1FBF4E27E367F2000AD8AC /* InstrumentAUv3DSPKernelAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstrumentAUv3DSPKernelAdapter.h; sourceTree = "<group>"; };
-		5A1FBF4F27E367F2000AD8AC /* InstrumentAUv3DSPKernel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InstrumentAUv3DSPKernel.hpp; sourceTree = "<group>"; };
-		5A1FBF5127E367F2000AD8AC /* InstrumentAUv3DSPKernel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = InstrumentAUv3DSPKernel.mm; sourceTree = "<group>"; };
 		5A1FBF5427E367F2000AD8AC /* AudioUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitViewController.swift; sourceTree = "<group>"; };
 		5A1FBF5627E367F2000AD8AC /* InstrumentAUv3AudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InstrumentAUv3AudioUnit.swift; path = "Audio Unit/InstrumentAUv3AudioUnit.swift"; sourceTree = "<group>"; };
-		5A1FBF5827E367F2000AD8AC /* InstrumentAUv3Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InstrumentAUv3Parameters.swift; path = "Audio Unit/InstrumentAUv3Parameters.swift"; sourceTree = "<group>"; };
-		5A1FBF5A27E367F2000AD8AC /* InstrumentAUv3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstrumentAUv3-Bridging-Header.h"; sourceTree = "<group>"; };
 		5A1FBF5C27E367F2000AD8AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		5A1FBF5E27E367F2000AD8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A1FBF6C27E36869000AD8AC /* Conductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conductor.swift; sourceTree = "<group>"; };
@@ -211,44 +194,10 @@
 			children = (
 				5A1FBF5327E367F2000AD8AC /* UI */,
 				5A1FBF5627E367F2000AD8AC /* InstrumentAUv3AudioUnit.swift */,
-				5A1FBF5827E367F2000AD8AC /* InstrumentAUv3Parameters.swift */,
-				5A1FBF5A27E367F2000AD8AC /* InstrumentAUv3-Bridging-Header.h */,
 				5A1FBF5B27E367F2000AD8AC /* MainInterface.storyboard */,
 				5A1FBF5E27E367F2000AD8AC /* Info.plist */,
-				5A1FBF4227E367F2000AD8AC /* Audio Unit */,
-				5A1FBF4627E367F2000AD8AC /* DSP */,
 			);
 			path = InstrumentAUv3;
-			sourceTree = "<group>";
-		};
-		5A1FBF4227E367F2000AD8AC /* Audio Unit */ = {
-			isa = PBXGroup;
-			children = (
-				5A1FBF4327E367F2000AD8AC /* InstrumentAUv3AudioUnit.h */,
-				5A1FBF4427E367F2000AD8AC /* InstrumentAUv3AudioUnit.m */,
-			);
-			path = "Audio Unit";
-			sourceTree = "<group>";
-		};
-		5A1FBF4627E367F2000AD8AC /* DSP */ = {
-			isa = PBXGroup;
-			children = (
-				5A1FBF4F27E367F2000AD8AC /* InstrumentAUv3DSPKernel.hpp */,
-				5A1FBF5127E367F2000AD8AC /* InstrumentAUv3DSPKernel.mm */,
-				5A1FBF4727E367F2000AD8AC /* Helpers */,
-			);
-			path = DSP;
-			sourceTree = "<group>";
-		};
-		5A1FBF4727E367F2000AD8AC /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				5A1FBF4827E367F2000AD8AC /* DSPKernel.hpp */,
-				5A1FBF4A27E367F2000AD8AC /* DSPKernel.mm */,
-				5A1FBF4C27E367F2000AD8AC /* BufferedAudioBus.hpp */,
-				5A1FBF4E27E367F2000AD8AC /* InstrumentAUv3DSPKernelAdapter.h */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		5A1FBF5327E367F2000AD8AC /* UI */ = {
@@ -429,10 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1FBF6B27E36836000AD8AC /* Sounds in Resources */,
-				5A1FBF5027E367F2000AD8AC /* InstrumentAUv3DSPKernel.hpp in Resources */,
 				5A1FBF5D27E367F2000AD8AC /* MainInterface.storyboard in Resources */,
-				5A1FBF4927E367F2000AD8AC /* DSPKernel.hpp in Resources */,
-				5A1FBF4D27E367F2000AD8AC /* BufferedAudioBus.hpp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,11 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A1FBF5727E367F2000AD8AC /* InstrumentAUv3AudioUnit.swift in Sources */,
-				5A1FBF5927E367F2000AD8AC /* InstrumentAUv3Parameters.swift in Sources */,
-				5A1FBF4B27E367F2000AD8AC /* DSPKernel.mm in Sources */,
 				5A1FBF5527E367F2000AD8AC /* AudioUnitViewController.swift in Sources */,
-				5A1FBF4527E367F2000AD8AC /* InstrumentAUv3AudioUnit.m in Sources */,
-				5A1FBF5227E367F2000AD8AC /* InstrumentAUv3DSPKernel.mm in Sources */,
 				5A1FBF6E27E36869000AD8AC /* Conductor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -784,7 +726,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "InstrumentAUv3/InstrumentAUv3-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -810,7 +751,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "InstrumentAUv3/InstrumentAUv3-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
