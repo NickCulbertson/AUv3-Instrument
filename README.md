@@ -1,4 +1,7 @@
 # AUv3 Instrument (AudioKit 5)
+-----
+*UPDATE:* There is now a separate branch that uses SwiftUI in the AUv3 mode. The master branch uses Swift and the default ViewController.  
+-----
 
 A minimal AUv3 instrument example using AudioKit 5. Download the project, customize it however you like, and share your work with the world.
 
