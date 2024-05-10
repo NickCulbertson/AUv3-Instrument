@@ -99,6 +99,7 @@ public class InstrumentAUv3AudioUnit: AUAudioUnit {
 
     public func setupParamTree() {
         // Create the parameter tree.
+        AUParam1.value = 0.3
         parameterTree = AUParameterTree.createTree(withChildren: [AUParam1])
     }
     
