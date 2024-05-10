@@ -105,7 +105,6 @@ public class InstrumentAUv3AudioUnit: AUAudioUnit {
     public func setupParamCallbacks() {
         //This changes the values of the conductor
         parameterTree?.implementorValueObserver = { param, value in
-
             if param.identifier == "AUParam1" {
                 self.conductor.verb.dryWetMix=value
             }

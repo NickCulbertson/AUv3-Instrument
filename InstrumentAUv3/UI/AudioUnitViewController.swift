@@ -1,76 +1,87 @@
-//
-//  AudioUnitViewController.swift
-//  AUv3InstrumentExtension
-//
-//  Created by Nick Culbertson on 3/16/22.
-//
-
 import CoreAudioKit
+import SwiftUI
+
+#if os(iOS)
+typealias HostingController = UIHostingController
+#elseif os(macOS)
+typealias HostingController = NSHostingController
+
+extension NSView {
+    func bringSubviewToFront(_ view: NSView) {
+        // This function is a no-op for macOS
+    }
+}
+#endif
 
 public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
     var audioUnit: AUAudioUnit?
-    var AUParam1: AUParameter?
-    @IBOutlet weak var reverbSlider: UISlider!
-    @IBOutlet weak var reverbLabel: UILabel!
-    
-    public override func viewDidLoad() {
-        reverbSlider.minimumValue = 0
-        reverbSlider.maximumValue = 1
-        reverbSlider.value = 0.0
-        reverbLabel.text = String(format: " %.2f", reverbSlider.value)
-        
-        super.viewDidLoad()
-        
-        if audioUnit == nil {
-            return
-        }
-        connectViewToAU()
-    }
-    
-    private var parameterObserverToken: AUParameterObserverToken?
+    var hostingController: HostingController<InstrumentEXSAUv3View>?
+    var parameterObserverToken: AUParameterObserverToken?
     var observer: NSKeyValueObservation?
     var needsConnection = true
     
-    private func connectViewToAU() {
+    var auParameter1: AUParameter?
+
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard let audioUnit = audioUnit else { return }
+        setupParameterObservation()
+        configureSwiftUIView(audioUnit: audioUnit)
+    }
+
+    private func setupParameterObservation() {
         guard needsConnection, let paramTree = audioUnit?.parameterTree else { return }
+        auParameter1 = paramTree.value(forKey: "AUParam1") as? AUParameter
         
-        // Find the parameters in the parameter tree.
-        AUParam1 = paramTree.value(forKey: "AUParam1") as? AUParameter
-        
-        // Observe major state changes like a user selecting a user preset.
         observer = audioUnit?.observe(\.allParameterValues) { object, change in
-            DispatchQueue.main.async {
-                //Update Preset
-            }
-        }
-        
-        // Observe value changes to parameters.
-        // Update individual GUI element
-        parameterObserverToken =
-        paramTree.token(byAddingParameterObserver: { [weak self] address, value in
-            guard let self = self else { return }
-            
-            if ([self.AUParam1?.address].contains(address)){
-                DispatchQueue.main.async {
-                    self.reverbSlider.value = self.AUParam1?.value ?? 0
-                    self.reverbLabel.text = String(format: " %.2f", self.AUParam1?.value ?? 0)
+                    DispatchQueue.main.async {
+                        //Update Presets
+                    }
                 }
+        
+        parameterObserverToken = paramTree.token(byAddingParameterObserver: { [weak self] address, value in
+            guard let self = self, address == self.auParameter1?.address else { return }
+            DispatchQueue.main.async {
+                self.hostingController?.rootView.updateParameterValue(value)
             }
         })
+        
         // Indicate the view and the audio unit have a connection.
         needsConnection = false
     }
-    
-    @IBAction func slider1ValueDidChange(_ sender: UISlider){
-        if sender.tag == 1 {
-            AUParam1?.value = self.reverbSlider.value
-            reverbLabel.text = String(format: " %.2f", reverbSlider.value)
-        }
-    }
-    
+
     public func createAudioUnit(with componentDescription: AudioComponentDescription) throws -> AUAudioUnit {
         audioUnit = try InstrumentAUv3AudioUnit(componentDescription: componentDescription, options: [])
-        connectViewToAU()
+        DispatchQueue.main.async {
+            self.setupParameterObservation()
+            self.configureSwiftUIView(audioUnit: self.audioUnit!)
+        }
         return audioUnit!
+    }
+    
+    private func configureSwiftUIView(audioUnit: AUAudioUnit) {
+        guard let auParameter1 = auParameter1 else { return }
+        let audioParameter = AudioParameter(auParameter: auParameter1, initialValue: auParameter1.value)
+        let contentView = InstrumentEXSAUv3View(audioParameter: audioParameter)
+        let hostingController = HostingController(rootView: contentView)
+
+        if let existingHost = self.hostingController {
+            existingHost.removeFromParent()
+            existingHost.view.removeFromSuperview()
+        }
+        
+        self.addChild(hostingController)
+        hostingController.view.frame = self.view.bounds
+        self.view.addSubview(hostingController.view)
+        self.hostingController = hostingController
+        
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hostingController.view.topAnchor.constraint(equalTo: self.view.topAnchor),
+            hostingController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
     }
 }

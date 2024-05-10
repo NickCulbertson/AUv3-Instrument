@@ -23,6 +23,11 @@
 		5A1FBF6B27E36836000AD8AC /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FBF3927E36690000AD8AC /* Sounds */; };
 		5A1FBF6D27E36869000AD8AC /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF6C27E36869000AD8AC /* Conductor.swift */; };
 		5A1FBF6E27E36869000AD8AC /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF6C27E36869000AD8AC /* Conductor.swift */; };
+		5AB954202BED3B4C00808A9D /* InstrumentEXS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF3127E36571000AD8AC /* InstrumentEXS.swift */; };
+		5AB954212BED3B5600808A9D /* SwiftUIKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE71F4C28EDB13F00AC572B /* SwiftUIKeyboard.swift */; };
+		5AB954222BED3B5A00808A9D /* ParameterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FBF2E27E3651C000AD8AC /* ParameterSlider.swift */; };
+		5AB954242BED3C0D00808A9D /* Keyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 5AB954232BED3C0D00808A9D /* Keyboard */; };
+		5AB954262BEE68EF00808A9D /* InstrumentEXSAUv3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB954252BEE68EF00808A9D /* InstrumentEXSAUv3View.swift */; };
 		5AE71F4D28EDB13F00AC572B /* SwiftUIKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE71F4C28EDB13F00AC572B /* SwiftUIKeyboard.swift */; };
 		5AE71F5028EDB15400AC572B /* Keyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 5AE71F4F28EDB15400AC572B /* Keyboard */; };
 		5AE7508A28205DA400AF8E9B /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5AE7508928205DA400AF8E9B /* AudioKit */; };
@@ -87,6 +92,7 @@
 		5A1FBF5C27E367F2000AD8AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		5A1FBF5E27E367F2000AD8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A1FBF6C27E36869000AD8AC /* Conductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conductor.swift; sourceTree = "<group>"; };
+		5AB954252BEE68EF00808A9D /* InstrumentEXSAUv3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentEXSAUv3View.swift; sourceTree = "<group>"; };
 		5AE71F4C28EDB13F00AC572B /* SwiftUIKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AE7508C28205DB700AF8E9B /* AudioKit in Frameworks */,
+				5AB954242BED3C0D00808A9D /* Keyboard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				5A1FBF5427E367F2000AD8AC /* AudioUnitViewController.swift */,
+				5AB954252BEE68EF00808A9D /* InstrumentEXSAUv3View.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -292,6 +300,7 @@
 			name = InstrumentAUv3;
 			packageProductDependencies = (
 				5AE7508B28205DB700AF8E9B /* AudioKit */,
+				5AB954232BED3C0D00808A9D /* Keyboard */,
 			);
 			productName = InstrumentAUv3;
 			productReference = 5A1FBF4027E367F2000AD8AC /* InstrumentAUv3.appex */;
@@ -421,6 +430,10 @@
 				5A1FBF5727E367F2000AD8AC /* InstrumentAUv3AudioUnit.swift in Sources */,
 				5A1FBF5527E367F2000AD8AC /* AudioUnitViewController.swift in Sources */,
 				5A1FBF6E27E36869000AD8AC /* Conductor.swift in Sources */,
+				5AB954202BED3B4C00808A9D /* InstrumentEXS.swift in Sources */,
+				5AB954262BEE68EF00808A9D /* InstrumentEXSAUv3View.swift in Sources */,
+				5AB954222BED3B5A00808A9D /* ParameterSlider.swift in Sources */,
+				5AB954212BED3B5600808A9D /* SwiftUIKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,7 +594,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Instrument/Preview Content\"";
-				DEVELOPMENT_TEAM = HH48VMRLAB;
+				DEVELOPMENT_TEAM = R6J85WRCEG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Instrument/Info.plist;
@@ -612,7 +625,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Instrument/Preview Content\"";
-				DEVELOPMENT_TEAM = HH48VMRLAB;
+				DEVELOPMENT_TEAM = R6J85WRCEG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Instrument/Info.plist;
@@ -711,7 +724,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HH48VMRLAB;
+				DEVELOPMENT_TEAM = R6J85WRCEG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InstrumentAUv3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = InstrumentAUv3;
@@ -736,7 +749,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HH48VMRLAB;
+				DEVELOPMENT_TEAM = R6J85WRCEG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InstrumentAUv3/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = InstrumentAUv3;
@@ -826,6 +839,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5AB954232BED3C0D00808A9D /* Keyboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AE71F4E28EDB15400AC572B /* XCRemoteSwiftPackageReference "Keyboard" */;
+			productName = Keyboard;
+		};
 		5AE71F4F28EDB15400AC572B /* Keyboard */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5AE71F4E28EDB15400AC572B /* XCRemoteSwiftPackageReference "Keyboard" */;
