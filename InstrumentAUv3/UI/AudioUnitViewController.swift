@@ -16,7 +16,7 @@ public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
     public override func viewDidLoad() {
         reverbSlider.minimumValue = 0
         reverbSlider.maximumValue = 1
-        reverbSlider.value = 0.0
+        reverbSlider.value = 0.3
         reverbLabel.text = String(format: " %.2f", reverbSlider.value)
         
         super.viewDidLoad()
