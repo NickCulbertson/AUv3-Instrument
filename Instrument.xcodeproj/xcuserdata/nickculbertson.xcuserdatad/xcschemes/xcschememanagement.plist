@@ -112,7 +112,7 @@
 		<key>Instrument.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>2</integer>
 		</dict>
 		<key>InstrumentAUv3.xcscheme_^#shared#^_</key>
 		<dict>
@@ -138,7 +138,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 </dict>
